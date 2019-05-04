@@ -107,8 +107,10 @@ class Ploter(object):
             self.display.display(self.plt.gcf())
         else:
             self.plt.savefig(path)
-        self.plt.gcf().clear()
 
+    def close_plot(self):
+        self.plt.gcf().clear()
+        
     def reset(self):
         for key in self.__plot_data__:
             data = self.__plot_data__[key]
